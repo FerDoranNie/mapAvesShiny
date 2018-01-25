@@ -33,7 +33,7 @@ shinyUI(fluidPage(
   ),
   tags$div(
     id="Git",
-    tags$a(href="https://www.github.com",
+    tags$a(href="https://github.com/FerDoranNie/mapAvesShiny",
            icon("github-square", "fa-5x"),
            icon("github-alt", "fa-5x"),
            tags$br(),
@@ -82,7 +82,7 @@ shinyUI(fluidPage(
         tabPanel("Ebird Información",tableOutput("tablaTest")),
         tabPanel("AOU Información", tableOutput("tablaEspecie")),
         # tabPanel("AOU Información", DT::dataTableOutput("tablaEspecie")), 
-        tabPanel("GBIF Información",tableOutput("tablaGbif")) 
+        tabPanel("GBIF Información (Especies relacionadas)",tableOutput("tablaGbif")) 
       )
       # dataTableOutput("tablaTest")  
     )

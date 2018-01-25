@@ -17,8 +17,7 @@ Estilos : CSS
 
   * Aplicar las búsquedas  a todas las aves del mundo.
   * Aplicar a otros grupos animales.
-
-
+  * Cambiar los estilos (App más bonita).
 
 # Licencia GNU AGPL V3
 

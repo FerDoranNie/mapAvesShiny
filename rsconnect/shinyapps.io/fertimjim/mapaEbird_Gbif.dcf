@@ -1,0 +1,12 @@
+name: mapaEbird_Gbif
+title: mapaEbird_Gbif
+username:
+account: fertimjim
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 261650
+bundleId: 1192966
+url: https://fertimjim.shinyapps.io/mapaEbird_Gbif/
+when: 1516906040.90044
+asMultiple: FALSE
+asStatic: FALSE
