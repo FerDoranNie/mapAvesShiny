@@ -160,7 +160,8 @@ shinyServer(function(input, output) {
   observe({
     if(tolower(input$inserta) %in% dataAves$nombre){
       X$data <- data.frame(nearestobs(species = input$inserta, 
-                                      max = 100, locale="es_MX"))
+                                      max = 100, locale="es_MX", 
+                                      lat = input$lat, lng =input$long ))
     }
     
     
@@ -425,20 +426,30 @@ shinyServer(function(input, output) {
       }else{
         leaflet() %>% 
           addTiles() %>% 
-          addMarkers(lng = -99.141546, lat= 19.429065) %>% 
-          addPopups(lng = -99.141546, lat= 19.429065, 
+          # addMarkers(lng = -99.141546, lat= 19.429065) %>% 
+          # addPopups(lng = -99.141546, lat= 19.429065, 
+          #           popup="Este mapa permanererá estático mientras
+          #           no se ponga un nombre correcto de ave",
+          #           options = popupOptions(closeButton = FALSE)) 
+          addMarkers(lng = as.numeric(input$long), lat= as.numeric(input$lat)) %>% 
+          # addPopups(lng = -99.141546, lat= 19.429065, 
+          addPopups(lng = input$long, lat= input$lat, 
                     popup="Este mapa permanererá estático mientras
-                    no se ponga un nombre correcto de ave",
-                    options = popupOptions(closeButton = FALSE)) 
+                    no se ponga un nombre de un ave,
+                    mientras te mostrará tu ubicación",
+                    options = popupOptions(closeButton = FALSE))
       }
       
     }else{
       leaflet() %>% 
         addTiles() %>% 
-        addMarkers(lng = -99.141546, lat= 19.429065) %>% 
-        addPopups(lng = -99.141546, lat= 19.429065, 
+        # addMarkers(lng = -99.141546, lat= 19.429065) %>% 
+        addMarkers(lng = as.numeric(input$long), lat= as.numeric(input$lat)) %>% 
+        # addPopups(lng = -99.141546, lat= 19.429065, 
+        addPopups(lng = input$long, lat= input$lat, 
                   popup="Este mapa permanererá estático mientras
-                    no se ponga un nombre de un ave",
+                    no se ponga un nombre de un ave,
+                   mientras te mostrará tu ubicación",
                   options = popupOptions(closeButton = FALSE))
       
     }
@@ -564,6 +575,19 @@ shinyServer(function(input, output) {
                   title.size = 1, title.col="red")      
     }
   )
+  ####
+  # output$lat <- renderPrint({
+  #   input$lat
+  # })
+  
+  # output$long <- renderPrint({
+  #   input$long
+  # })
+  
+  # output$geolocation <- renderPrint({
+  #   input$geolocation
+  # })
+  
   
   
 })

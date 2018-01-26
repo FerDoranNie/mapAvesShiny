@@ -16,6 +16,28 @@ shinyUI(fluidPage(
   titlePanel(title= div(img(src="./bird3.png", width=50, height= 50),
                         "App de busqueda de información de aves")),
   
+  tags$script('$(document).ready(function () {
+  navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+  function onError (err) {
+    Shiny.onInputChange("geolocation", false);
+  }
+
+  function onSuccess (position) {
+    setTimeout(function () {
+      var coords = position.coords;
+      console.log(coords.latitude + ", " + coords.longitude);
+      Shiny.onInputChange("geolocation", true);
+      Shiny.onInputChange("lat", coords.latitude);
+      Shiny.onInputChange("long", coords.longitude);
+    }, 1100)
+  }
+  });'
+  ),
+  # verbatimTextOutput("lat"),
+  # verbatimTextOutput("long"),
+  # verbatimTextOutput("geolocation"),
+  
   tags$h3("Usando Ebird, GBIF e  información del AOU"),
   
   tags$b("Usa el nombre cientifico de cualquier ave de Norteamérica y América Central"),
