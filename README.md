@@ -23,6 +23,9 @@ Puede ver la aplicación funcionando aquí:
   * Busquedas con nombres comunes en español e inglés (el reto más dificil).
   * Cambiar los estilos (App más bonita).
 
+ Si desean ayudarme, hagan un fork en GitHub o
+ pueden contactarme a fertimjim@gmail.com
+
 # Licencia GNU AGPL V3
 
 
