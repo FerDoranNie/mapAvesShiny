@@ -28,7 +28,7 @@ Puede ver la aplicación funcionando aquí:
 
 # Licencia GNU AGPL V3
 
-
+Ver licencia aquí: [licencia](https://github.com/FerDoranNie/mapAvesShiny/blob/master/LICENSE)
 
 
 
